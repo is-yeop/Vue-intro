@@ -1,29 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Header/>
+    <div id="content" class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
-
-// import bootstrap
-import {BootstrapVue, IconsPlugin} from "bootstrap-vue";
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-import 'bootstrap/dist/css/bootstrap.css';
-
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
+import {Component, Vue} from 'vue-property-decorator';
+import Header from './components/layout/Header.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Header,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+}
 </script>
 
 <style>
@@ -33,6 +27,6 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
 </style>
